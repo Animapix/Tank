@@ -6,7 +6,7 @@ function newBullet()
     b.y = 0
     b.vX = 0
     b.vY = 0
-    b.speed = 500
+    b.speed = 1000
     b.damage = 50
     b.radius = 5
     b.startX = 0

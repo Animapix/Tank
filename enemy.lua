@@ -48,6 +48,22 @@ function newEnemy(x, y)
         enemy.x = enemy.x + math.cos(enemy.direction) * enemy.speed * dt
         enemy.y = enemy.y + math.sin(enemy.direction) * enemy.speed * dt
 
+        if enemy.x < 0 then
+            enemy.x = 0
+            enemy.direction = math.random(0, 2* math.pi)
+        elseif enemy.x > SCREEN_WIDTH then
+            enemy.x = SCREEN_WIDTH
+            enemy.direction = math.random(0, 2* math.pi)
+        end
+
+        if enemy.y < 0 then
+            enemy.y = 0
+            enemy.direction = math.random(0, 2* math.pi)
+        elseif enemy.y > SCREEN_HEIGHT then
+            enemy.y = SCREEN_HEIGHT
+            enemy.direction = math.random(0, 2* math.pi)
+        end
+
         if enemy.patrolTimmer <= 0 then
             enemy.patrolTimmer = math.random(enemy.patrolMinDuration, enemy.patrolMaxDuration)
             enemy.direction = math.random(enemy.direction - math.pi / 4, enemy.direction + math.pi / 4)
